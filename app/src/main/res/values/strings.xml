@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GoEat</string>
+    <!--<string name="action_settings">View type</string>-->
+    <string name="title_activity_street_view">StreetViewActivity</string>
+    <string name="title_activity_web_view"></string>
+    <string name="title_activity_web_view_app">WebViewApp</string>
+    <string name="title_activity_street_view_app">StreetViewApp</string>
+    <string name="title_activity_sv">SvActivity</string>
+    <string name="title_activity_data">DataActivity</string>
+</resources>
