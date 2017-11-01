@@ -65,12 +65,28 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.Belconnen) {
 //            mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-            DataItemAdapter adapter = new DataItemAdapter(this, dataItemList);
-
-            RecyclerView recycleView = (RecyclerView) findViewById(R.id.rvItems);
-            recycleView.setAdapter(adapter);
+            LatLng belconnen = new LatLng(-35.237000, 149.065);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(belconnen,13));
+            return true;
+        }
+        if (id == R.id.Gungahlin) {
+//            mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            LatLng gungahlin = new LatLng(-35.184881, 149.134284);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(gungahlin,13));
+            return true;
+        }
+        if (id == R.id.Tuggeranong) {
+//            mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            LatLng tuggeranong  = new LatLng(-35.416431, 149.066604);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tuggeranong ,13));
+            return true;
+        }
+        if (id == R.id.Woden) {
+//            mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            LatLng woden = new LatLng(-35.346162, 149.087235);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(woden,13));
             return true;
         }
 
@@ -143,6 +159,42 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             .icon(BitmapDescriptorFactory.fromResource(R.mipmap.parlourlogo))
             .flat(true);
         final Marker Parlour = mMap.addMarker((Parlour_marker));
+        //**************************************************************chong co  *************************************
+        MarkerOptions chongco_marker =  new MarkerOptions()
+                .position( new LatLng(-35.237636, 149.063218))
+                .draggable(false)
+                .title("Chong Co Restaurant ")
+                .snippet("asia cuisin ....")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.parlourlogo))
+                .flat(true);
+        final Marker chongco = mMap.addMarker((chongco_marker));
+        //**************************************************************arirang  *************************************
+        MarkerOptions arirang_marker =  new MarkerOptions()
+                .position( new LatLng(-35.185474, 149.13546))
+                .draggable(false)
+                .title("Arirang Restaurant ")
+                .snippet("Korean cuisin ....")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.arirang))
+                .flat(true);
+        final Marker arirang = mMap.addMarker((arirang_marker));
+        //**************************************************************goldenking  *************************************
+        MarkerOptions goldenking_marker =  new MarkerOptions()
+                .position( new LatLng(-35.353514, 149.089254))
+                .draggable(false)
+                .title("Golden King Restaurant ")
+                .snippet("Chinese cuisin ....")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.goldenking))
+                .flat(true);
+        final Marker goldenking = mMap.addMarker((goldenking_marker));
+        //**************************************************************istanbul  *************************************
+        MarkerOptions istanbul_marker =  new MarkerOptions()
+                .position( new LatLng(-35.415583, 149.067392))
+                .draggable(false)
+                .title("Istanbul Restaurant ")
+                .snippet("Istanbul cuisin ....")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.istanbul))
+                .flat(true);
+        final Marker istanbul = mMap.addMarker((istanbul_marker));
 ////////////////////////////////////////////infoWindows//////////////////////////////////////////////////////////
         mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter(){
             @Override
@@ -163,6 +215,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     image.setImageDrawable(getResources().getDrawable(R.mipmap.onredrestaurant, getTheme()));
                 }if (marker.getId().equals(Parlour.getId())){
                     image.setImageDrawable(getResources().getDrawable(R.mipmap.parlourrestaurant, getTheme()));
+                }if (marker.getId().equals(chongco.getId())){
+                    image.setImageDrawable(getResources().getDrawable(R.mipmap.chongco, getTheme()));
+                }if (marker.getId().equals(arirang.getId())){
+                    image.setImageDrawable(getResources().getDrawable(R.mipmap.arirang, getTheme()));
+                }if (marker.getId().equals(goldenking.getId())){
+                    image.setImageDrawable(getResources().getDrawable(R.mipmap.goldenking, getTheme()));
+                }if (marker.getId().equals(istanbul.getId())){
+                    image.setImageDrawable(getResources().getDrawable(R.mipmap.istanbul, getTheme()));
                 }
 
                 return infoWindow;
@@ -182,7 +242,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     intent.putExtra("url", "http://chairmangroup.com.au/lilotang/");
                 }if ( marker.getId().equals(Bicicletta.getId())) {
                     intent.putExtra("url", "http://www.bicicletta.com.au/");
+                }if ( marker.getId().equals(chongco.getId())) {
+                    intent.putExtra("url", "http://www.chongcothai.com.au/belconnen.html");
+                }if ( marker.getId().equals(arirang.getId())) {
+                    intent.putExtra("url", "http://www.arirang.com.au/");
+                }if ( marker.getId().equals(goldenking.getId())) {
+                    intent.putExtra("url", "http://www.goldenkingchineserestaurantact.com/");
+                }if ( marker.getId().equals(istanbul.getId())) {
+                    intent.putExtra("url", "http://www.littleistanbul.com.au/");
                 }
+
                 startActivity(intent);
             }
         });

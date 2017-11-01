@@ -2,31 +2,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.hoang.goeat.MainActivity">
+
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/Gungahlin"
         android:orderInCategory="100"
-        android:title="+"
+        android:title="Gungahlin"
         app:showAsAction="never" />
-    <!--<item-->
-        <!--android:id="@+id/normal"-->
-        <!--android:orderInCategory="100"-->
-        <!--android:title="NORMAL"-->
-        <!--app:showAsAction="never" />-->
-    <!--<item-->
-        <!--android:id="@+id/none"-->
-        <!--android:orderInCategory="100"-->
-        <!--android:title="NONE"-->
-        <!--app:showAsAction="never" />-->
-    <!--<item-->
-        <!--android:id="@+id/hybrid"-->
-        <!--android:orderInCategory="100"-->
-        <!--android:title="HYBRID"-->
-        <!--app:showAsAction="never" />-->
-    <!--<item-->
-        <!--android:id="@+id/satellite"-->
-        <!--android:orderInCategory="100"-->
-        <!--android:title="SATELLITE"-->
-        <!--app:showAsAction="never" />-->
+    <item
+        android:id="@+id/Belconnen"
+        android:orderInCategory="100"
+        android:title="Belconnen"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/Woden"
+        android:orderInCategory="100"
+        android:title="Woden"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/Tuggeranong"
+        android:orderInCategory="100"
+        android:title="Tuggeranong"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/satellite"
+        android:orderInCategory="100"
+        android:title="My position"
+        app:showAsAction="never" />
     <!--<item-->
         <!--android:id="@+id/terrain"-->
         <!--android:orderInCategory="100"-->
